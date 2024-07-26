@@ -1,4 +1,4 @@
-/** style.css */
+/* Style.css */
 
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
@@ -10,6 +10,7 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
   box-sizing: border-box;
 }
+
 body {
   margin: 0rem;
   padding: 0rem;
@@ -22,6 +23,7 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
 .container {
   margin: 0.5rem;
   padding: 0.5rem;
@@ -31,6 +33,7 @@ body {
   align-items: center;
   width: 90vw;
 }
+
 .title {
   margin: 0.5rem;
   padding: 0.5rem;
@@ -41,6 +44,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .panel {
   margin: 0.5rem;
   padding: 0.5rem;
@@ -62,6 +66,7 @@ body {
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
 }
+
 .panel h3 {
   margin: 0.5rem;
   padding: 0.5rem;
@@ -77,9 +82,11 @@ body {
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
 }
+
 .panel.active {
   flex: 5;
 }
+
 .panel.active h3 {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
@@ -88,10 +95,12 @@ body {
   -ms-transition: opacity 0.3s ease-in 0.4s;
   -o-transition: opacity 0.3s ease-in 0.4s;
 }
+
 @media (max-width: 480px) {
   .container {
     width: 100vw;
   }
+
   .panel:nth-of-type(4),
   .panel:nth-of-type(5) {
     display: none;
