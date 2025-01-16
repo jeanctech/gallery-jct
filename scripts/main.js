@@ -1,4 +1,4 @@
-// Main.js */
+//* Main.js */
 
 const panels = document.querySelectorAll(".panel");
 
