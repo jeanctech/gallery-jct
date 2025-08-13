@@ -1,0 +1,69 @@
+<script>
+  let activeIndex = 0;
+  const panels = [
+    {
+      title: "Explore The World",
+      image:
+        "https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    },
+    {
+      title: "Wild Forest",
+      image:
+        "https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    },
+    {
+      title: "Sunny Beach",
+      image:
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80",
+    },
+    {
+      title: "City on Winter",
+      image:
+        "https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80",
+    },
+    {
+      title: "Mountains - Clouds",
+      image:
+        "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    },
+  ];
+
+  function handleKeyDown(event, index) {
+    if (["Enter", " "].includes(event.key)) {
+      event.preventDefault();
+      activeIndex = index;
+    }
+  }
+</script>
+
+<main>
+  <div class="title">
+    <h1>Gallery-Jct</h1>
+    <img class="title-image" src="/favicon.svg" alt="Logo" />
+  </div>
+  <div class="container">
+    {#each panels as panel, index}
+      <button
+        class="panel {index === activeIndex ? 'active' : ''}"
+        style="background-image: url('{panel.image}')"
+        on:click={() => (activeIndex = index)}
+        on:keydown={(e) => handleKeyDown(e, index)}
+        aria-label={"Expandir imagen: " + panel.title}
+      >
+        <h3>{panel.title}</h3>
+      </button>
+    {/each}
+  </div>
+</main>
+
+<style>
+  /* Reset de estilos para botones */
+  button.panel {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 10px;
+    display: block;
+    /* ... otros estilos existentes ... */
+  }
+</style>
